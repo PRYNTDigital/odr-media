@@ -397,6 +397,21 @@ body.show-notes #notesPanel{display:block}
  .slide{width:100%;height:auto;page-break-after:always;padding:0}  
  .stage{transform:none}.r{opacity:1;transform:none}  
 }  
+
+@media (max-width:860px){
+ table.t.stackm,table.t.stackm tbody,table.t.stackm tr,table.t.stackm td{display:block;width:100%!important}
+ table.t.stackm tr.hd{display:none}
+ table.t.stackm tr{padding:16px 0;border-bottom:1px solid var(--line)}
+ table.t.stackm tr:last-child{border-bottom:0}
+ table.t.stackm td{border:0;padding:4px 0;text-align:left!important;white-space:normal}
+ table.t.stackm td:first-child{font-size:19px;padding-bottom:4px}
+ table.t.stackm td[data-label]:before{content:attr(data-label);display:block;font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:8px 0 2px}
+ table.t.stackm td.r{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+ table.t.stackm td.r[data-label]:before{display:inline;margin:0}
+ table.t.stackm td.r br{display:none}
+ table.t.stackm td.r span{flex-basis:100%;text-align:right;margin-top:-6px}
+ #fixmedia .grid > div{min-width:0}
+}
 </style>  
 <style>
 .cbars{margin-top:6px}
@@ -507,15 +522,15 @@ table.pricing td{font-size:18px;padding:18px 12px}
  <div class="stage">
   <div class="eb r"><span class="sec">01</span> Where you stand</div>
   <h2 class="r">Every channel you're on, as a buyer or seller sees it today.</h2>
-  <table class="t mt r">
-   <tr><th style="width:18%">Channel</th><th style="width:30%">What's there</th><th>What we noticed</th></tr>
-   <tr><td>Website</td><td>odrnow.com, on Lofty. olddominionrealty.com and odrva.com both forward to it.</td><td>Home search and the home-value tool work. The company around them (offices, services, people, history) mostly isn't there.</td></tr>
-   <tr><td>Google profiles</td><td>Six: Harrisonburg 4.2 (107), Property Management 2.4 (17), Augusta County 4.8 (21), Moorefield 4.4 (16), Crossroads 5.0 (4), Franklin 4.5 (2)</td><td>Every profile links to a homepage, not to its office. The two West Virginia offices still link to the old olddominionrealty.com address.</td></tr>
-   <tr><td>Facebook</td><td>8,400 followers. About one to two posts a day: agent stories, Local Gem spotlights, listings, seasonal jokes.</td><td>The agent stories get 5 to 9 times the reactions of everything else.</td></tr>
-   <tr><td>Instagram</td><td>1,081 followers, 3,838 posts, following 1,430</td><td>Mostly template graphics. It follows more accounts than follow it back.</td></tr>
-   <tr><td>TikTok</td><td>344 followers, 4,017 likes</td><td>Same graphics and clips as Facebook.</td></tr>
-   <tr><td>Meta ads</td><td>Four active ads on Nov 23: three listing ads and one agent ad</td><td>All template graphics, no footage of the homes. The agent ad has run since Oct 7 and has fewer than 100 impressions.</td></tr>
-   <tr><td>Property management</td><td>odrpm.com, a separate site and brand</td><td>It doesn't link back to the main site, and its Google profile sits at 2.4 stars.</td></tr>
+  <table class="t stackm mt r">
+   <tr class="hd"><th style="width:18%">Channel</th><th style="width:30%">What's there</th><th>What we noticed</th></tr>
+   <tr><td>Website</td><td data-label="What's there">odrnow.com, on Lofty. olddominionrealty.com and odrva.com both forward to it.</td><td data-label="What we noticed">Home search and the home-value tool work. The company around them (offices, services, people, history) mostly isn't there.</td></tr>
+   <tr><td>Google profiles</td><td data-label="What's there">Six: Harrisonburg 4.2 (107), Property Management 2.4 (17), Augusta County 4.8 (21), Moorefield 4.4 (16), Crossroads 5.0 (4), Franklin 4.5 (2)</td><td data-label="What we noticed">Every profile links to a homepage, not to its office. The two West Virginia offices still link to the old olddominionrealty.com address.</td></tr>
+   <tr><td>Facebook</td><td data-label="What's there">8,400 followers. About one to two posts a day: agent stories, Local Gem spotlights, listings, seasonal jokes.</td><td data-label="What we noticed">The agent stories get 5 to 9 times the reactions of everything else.</td></tr>
+   <tr><td>Instagram</td><td data-label="What's there">1,081 followers, 3,838 posts, following 1,430</td><td data-label="What we noticed">Mostly template graphics. It follows more accounts than follow it back.</td></tr>
+   <tr><td>TikTok</td><td data-label="What's there">344 followers, 4,017 likes</td><td data-label="What we noticed">Same graphics and clips as Facebook.</td></tr>
+   <tr><td>Meta ads</td><td data-label="What's there">Four active ads on Nov 23: three listing ads and one agent ad</td><td data-label="What we noticed">All template graphics, no footage of the homes. The agent ad has run since Oct 7 and has fewer than 100 impressions.</td></tr>
+   <tr><td>Property management</td><td data-label="What's there">odrpm.com, a separate site and brand</td><td data-label="What we noticed">It doesn't link back to the main site, and its Google profile sits at 2.4 stars.</td></tr>
   </table>
   <p class="src r">Counts as of Nov 8, 2026. Ads rechecked Nov 23, 2026 in Meta's public Ad Library.</p>
  </div>
@@ -782,11 +797,11 @@ table.pricing td{font-size:18px;padding:18px 12px}
   <div class="grid g2 mt" style="gap:64px;align-items:start;grid-template-columns:1.25fr 1fr">
    <div class="r">
     <h4>Packages, by home size (square feet)</h4>
-    <table class="t">
-     <tr><th>Package</th><th class="r">Up to 2,000</th><th class="r">2,000–3,500</th><th class="r">3,500–5,000</th><th class="r">5,000–6,500</th><th class="r">6,500+</th></tr>
-     <tr><td>Capture</td><td class="r">$260</td><td class="r">$320</td><td class="r">$400</td><td class="r">$500</td><td class="r">Quote</td></tr>
-     <tr><td>Create</td><td class="r">$420</td><td class="r">$480</td><td class="r">$560</td><td class="r">$660</td><td class="r">Quote</td></tr>
-     <tr><td>Elevate</td><td class="r" colspan="5" style="text-align:left">$745 and up</td></tr>
+    <table class="t stackm">
+     <tr class="hd"><th>Package</th><th class="r">Up to 2,000</th><th class="r">2,000–3,500</th><th class="r">3,500–5,000</th><th class="r">5,000–6,500</th><th class="r">6,500+</th></tr>
+     <tr><td>Capture</td><td data-label="Up to 2,000" class="r">$260</td><td data-label="2,000–3,500" class="r">$320</td><td data-label="3,500–5,000" class="r">$400</td><td data-label="5,000–6,500" class="r">$500</td><td data-label="6,500+" class="r">Quote</td></tr>
+     <tr><td>Create</td><td data-label="Up to 2,000" class="r">$420</td><td data-label="2,000–3,500" class="r">$480</td><td data-label="3,500–5,000" class="r">$560</td><td data-label="5,000–6,500" class="r">$660</td><td data-label="6,500+" class="r">Quote</td></tr>
+     <tr><td>Elevate</td><td data-label="All sizes" class="r" colspan="5" style="text-align:left">$745 and up</td></tr>
     </table>
     <div class="notes" style="margin-top:22px">
      <div><h3 style="font-size:20px">Capture</h3><p>Interior and exterior photos, aerial photos, 2D floor plan and property borders, professionally edited and MLS-ready.</p></div>
@@ -927,13 +942,13 @@ table.pricing td{font-size:18px;padding:18px 12px}
  <div class="stage">
   <div class="eb r"><span class="sec">05</span> Pricing</div>
   <h2 class="r">What it costs to fix it and then run it.</h2>
-  <table class="t mt r pricing">
-   <tr><th style="width:26%">Service</th><th>What it covers</th><th class="r" style="width:16%">One time</th><th class="r" style="width:16%">Monthly</th></tr>
-   <tr><td>Website</td><td>The new company site on PRYNT Builder: office, service, team, seller and recruiting pages, hosting, updates and support</td><td class="r">$10,500</td><td class="r">$99/mo</td></tr>
-   <tr><td>Google profiles and reviews</td><td>All six profiles set up and kept active, automatic review requests after every closing, review replies</td><td class="r">—</td><td class="r">$900/mo<br><span style="font-size:14px;color:var(--muted)">$150 per profile</span></td></tr>
-   <tr><td>Social and video</td><td>Shot lists, editing of listing and agent videos, captions and posting across Facebook, Instagram and TikTok</td><td class="r">—</td><td class="r">$1,500/mo</td></tr>
-   <tr><td>Listing photo and video</td><td>Great Valley Digital, booked per listing: photos, drone, floor plans and video. Short-form and drone shoots $100–$165 an hour</td><td class="r">$185–$745+ per listing</td><td class="r">—</td></tr>
-   <tr><td>Paid ads</td><td>Tracking setup, then seller and listing campaigns on Meta (Facebook and Instagram), for ad spend under $3,000 a month</td><td class="r">$500</td><td class="r">$750/mo</td></tr>
+  <table class="t stackm mt r pricing">
+   <tr class="hd"><th style="width:26%">Service</th><th>What it covers</th><th class="r" style="width:16%">One time</th><th class="r" style="width:16%">Monthly</th></tr>
+   <tr><td>Website</td><td data-label="What it covers">The new company site on PRYNT Builder: office, service, team, seller and recruiting pages, hosting, updates and support</td><td data-label="One time" class="r">$10,500</td><td data-label="Monthly" class="r">$99/mo</td></tr>
+   <tr><td>Google profiles and reviews</td><td data-label="What it covers">All six profiles set up and kept active, automatic review requests after every closing, review replies</td><td data-label="One time" class="r">—</td><td data-label="Monthly" class="r">$900/mo<br><span style="font-size:14px;color:var(--muted)">$150 per profile</span></td></tr>
+   <tr><td>Social and video</td><td data-label="What it covers">Shot lists, editing of listing and agent videos, captions and posting across Facebook, Instagram and TikTok</td><td data-label="One time" class="r">—</td><td data-label="Monthly" class="r">$1,500/mo</td></tr>
+   <tr><td>Listing photo and video</td><td data-label="What it covers">Great Valley Digital, booked per listing: photos, drone, floor plans and video. Short-form and drone shoots $100–$165 an hour</td><td data-label="One time" class="r">$185–$745+ per listing</td><td data-label="Monthly" class="r">—</td></tr>
+   <tr><td>Paid ads</td><td data-label="What it covers">Tracking setup, then seller and listing campaigns on Meta (Facebook and Instagram), for ad spend under $3,000 a month</td><td data-label="One time" class="r">$500</td><td data-label="Monthly" class="r">$750/mo</td></tr>
   </table>
   <p class="src r">Ad spend is paid to Meta directly and isn't included. The ad account stays in Old Dominion's name. Paid ads run on a 180-day term. Review requests are sent by text through our third-party provider, Twilio. Text fees aren't included in the monthly price and are passed through as used, currently about $0.0087 per text (per 160-character segment in the US and Canada).</p>
  </div>
